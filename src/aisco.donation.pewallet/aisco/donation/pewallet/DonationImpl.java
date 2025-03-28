@@ -6,7 +6,6 @@ import aisco.donation.core.DonationDecorator;
 import aisco.donation.core.DonationComponent;
 import payment.page.core.*;
 import payment.page.PaymentPageFactory;
-imp
 
 public class DonationImpl extends DonationDecorator {
     PaymentPage payment;
