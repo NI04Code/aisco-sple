@@ -23,7 +23,13 @@
 	"DirectPayment":[
 		"aisco.donation.core"
 	],
-	"PaymentGateway": [
-		"aisco.donation.pgateway"
+	"CreditCard": [
+		"aisco.donation.pcreditcard"
+	],
+	"BankTransfer": [
+		"aisco.donation.pbanktransfer"
+	],
+	"EWallet": [ 
+		"aisco.donation.pewallet"
 	]
 }
