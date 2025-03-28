@@ -1,4 +1,4 @@
-module aisco.product.donasicc {
+module aisco.product.donasiewallet {
     requires aisco.program.core;
     requires aisco.program.activity;
     requires aisco.program.operational;
@@ -6,5 +6,5 @@ module aisco.product.donasicc {
     requires aisco.financialreport.income;
     requires aisco.financialreport.expense;
     requires aisco.donation.core;
-    requires aisco.donation.pcreditcard;
+    requires aisco.donation.pewallet;
 }

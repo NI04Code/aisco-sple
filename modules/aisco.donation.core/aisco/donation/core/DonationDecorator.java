@@ -1,6 +1,5 @@
 package aisco.donation.core;
 
-import aisco.program.core.Program;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +7,9 @@ public abstract class DonationDecorator extends DonationComponent {
     public DonationComponent donation;
 
     public DonationDecorator (DonationComponent donation) {
+    	super(name, email, phone, amount,paymentMethod);
         this.donation = donation;
+        
     }
 
     public void addDonation() {
