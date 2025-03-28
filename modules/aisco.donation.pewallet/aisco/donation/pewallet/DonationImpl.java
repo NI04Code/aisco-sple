@@ -6,7 +6,6 @@ import aisco.donation.core.DonationDecorator;
 import aisco.donation.core.DonationComponent;
 import payment.page.core.*;
 import payment.page.PaymentPageFactory;
-imp
 
 public class DonationImpl extends DonationDecorator {
     PaymentPage payment;
@@ -14,6 +13,10 @@ public class DonationImpl extends DonationDecorator {
     String walletName;
     String walletNumber;
     
+    public DonationImpl() {
+        System.out.println("Donation via E Wallet");
+        donationList = new ArrayList<>();
+    }
     
     public DonationImpl(String name, String email, String phone, int amount, String paymentMethod, String walletName, String walletNumber) {
     	this.name = name;
@@ -31,9 +34,9 @@ public class DonationImpl extends DonationDecorator {
     }
 
     public void addDonation(){
-    	donationList.add(new DonationImpl("Anisa", "anisa@jmail.com", "+62878 6654 3321", 2500000, "BankTransfer", "gopay", "+62878 6654 3321"));
-        donationList.add(new DonationImpl("Dave", "dave@jmail.com", "+62828 2345 3091", 500000, "BankTransfer", "ovo", "+62828 2345 3091"));
-        donationList.add(new DonationImpl("Edo", "edo@jmail.com", "+62828 2345 3091", 300000, "BankTransfer", "dana", "+62828 2345 3091"));
+    	donationList.add(new DonationImpl("Anisa", "anisa@jmail.com", "+62878 6654 3321", 2500000, "EWallet", "gopay", "+62878 6654 3321"));
+        donationList.add(new DonationImpl("Dave", "dave@jmail.com", "+62828 2345 3091", 500000, "EWallet", "ovo", "+62828 2345 3091"));
+        donationList.add(new DonationImpl("Edo", "edo@jmail.com", "+62828 2345 3091", 300000, "EWallet", "dana", "+62828 2345 3091"));
     }
 
     public String toString() {

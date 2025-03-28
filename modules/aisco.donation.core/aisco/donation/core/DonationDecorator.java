@@ -7,9 +7,11 @@ public abstract class DonationDecorator extends DonationComponent {
     public DonationComponent donation;
 
     public DonationDecorator (DonationComponent donation) {
-    	super(name, email, phone, amount,paymentMethod);
         this.donation = donation;
-        
+    }
+    
+    public DonationDecorator () {
+    	System.out.println("Donation Decorator");
     }
 
     public void addDonation() {

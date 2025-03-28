@@ -1,4 +1,4 @@
-package aisco.donation.pcreditcard;
+package aisco.donation.pbanktransfer;
 import java.util.ArrayList;
 
 import java.util.Arrays;
@@ -14,8 +14,17 @@ public class DonationImpl extends DonationDecorator {
     String bankName;
     String accountNumber;
     
-    public DonationImpl(DonationComponent donation, string bankName, string accountNumber) {
-    	super(donation);
+    public DonationImpl() {
+        System.out.println("Donation via Bank Transfer");
+        donationList = new ArrayList<>();
+    }
+    
+    public DonationImpl(String name, String email, String phone, int amount, String paymentMethod, String bankName, String accountNumber) {
+    	this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
     	this.bankName = bankName;
     	this.accountNumber = accountNumber;
     	this.donationList = new ArrayList<>();
@@ -26,13 +35,9 @@ public class DonationImpl extends DonationDecorator {
     }
 
     public void addDonation(){
-    	DonationComponent anisaDonation = new DonationComponent("Anisa", "anisa@jmail.com", "+62878 6654 3321", 2500000, "BankTransfer");
-        DonationComponent daveDonation = new DonationComponent("Dave", "dave@jmail.com", "+62828 2345 3091", 500000, "BankTransfer");
-        DonationComponent edoDonation = new DonationComponent("Edo", "edo@jmail.com", "+62828 2345 3091", 300000, "BankTransfer");
-        
-    	donationList.add(new DonationImpl(anisaDonation, "BCA", "6437423934"));
-        donationList.add(new DonationImpl(daveDonation, "Mandiri", "0987654321"));
-        donationList.add(new DonationImpl(edoDonation, "BNI", "4567891234"));
+    	donationList.add(new DonationImpl("Anisa", "anisa@jmail.com", "+62878 6654 3321", 2500000, "BankTransfer", "BCA", "6437423934"));
+        donationList.add(new DonationImpl("Dave", "dave@jmail.com", "+62828 2345 3091", 500000, "BankTransfer", "Mandiri", "0987654321"));
+        donationList.add(new DonationImpl("Edo", "edo@jmail.com", "+62828 2345 3091", 300000, "BankTransfer", "BNI", "4567891234"));
     }
 
     public String toString() {

@@ -11,7 +11,7 @@ public abstract class DonationDecorator extends DonationComponent {
     }
     
     public DonationDecorator () {
-    	System.out.println("Decorator");
+    	System.out.println("Donation Decorator");
     }
 
     public void addDonation() {
