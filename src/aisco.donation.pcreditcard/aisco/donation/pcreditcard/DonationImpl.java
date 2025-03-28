@@ -10,13 +10,13 @@ import payment.page.PaymentPageFactory;
 public class DonationImpl extends DonationDecorator {
     PaymentPage payment;
     List <DonationComponent> donationList;
-    String bankName;
-    String accountNumber;
+    String cardNumber;
+    String cvc;
     
-    public DonationImpl(DonationComponent donation, string bankName, string accountNumber) {
+    public DonationImpl(DonationComponent donation, string cardNumber, string cvc) {
     	super(donation);
-    	this.bankName = bankName;
-    	this.accountNumber = accountNumber;
+    	this.cardNumber = cardNumber;
+    	this.cvc = cvc;
     	this.donationList = new ArrayList<>();
     }
 
@@ -29,13 +29,13 @@ public class DonationImpl extends DonationDecorator {
         DonationComponent daveDonation = new DonationComponent("Dave", "dave@jmail.com", "+62828 2345 3091", 500000, "BankTransfer");
         DonationComponent edoDonation = new DonationComponent("Edo", "edo@jmail.com", "+62828 2345 3091", 300000, "BankTransfer");
         
-    	donationList.add(new DonationImpl(anisaDonation, "BCA", "6437423934"));
-        donationList.add(new DonationImpl(daveDonation, "Mandiri", "0987654321"));
-        donationList.add(new DonationImpl(edoDonation, "BNI", "4567891234"));
+    	donationList.add(new DonationImpl(anisaDonation, "3092183012983", "123"));
+        donationList.add(new DonationImpl(daveDonation, "572357239857", "022"));
+        donationList.add(new DonationImpl(edoDonation, "12382198371289", "983"));
     }
 
     public String toString() {
-        return "- Donasi " + name + ": " + amount + " Payment Method: " + paymentMethod + "Bank Account: " + bankName + "Account Number: " + accountNumber + "\n";
+        return "- Donasi " + name + ": " + amount + " Payment Method: " + paymentMethod + "Bank Account: " + cardNumber + "Account Number: " + cvc + "\n";
     }
 
 }

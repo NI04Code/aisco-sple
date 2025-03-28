@@ -1,4 +1,4 @@
-module aisco.product.donasibanktransfer {
+module aisco.product.donasicc {
     requires aisco.program.core;
     requires aisco.program.activity;
     requires aisco.program.operational;
@@ -6,5 +6,5 @@ module aisco.product.donasibanktransfer {
     requires aisco.financialreport.income;
     requires aisco.financialreport.expense;
     requires aisco.donation.core;
-    requires aisco.donation.pbanktransfer;
+    requires aisco.donation.pcreditcard;
 }
